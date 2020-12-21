@@ -1,6 +1,7 @@
+import peewee
 from abc import ABC, abstractmethod
 
-class ToDoListRepository(ABC):
-    @abstractmethod
-    def create_task(self, purchase):
+from src.domain.entity.task import Task
+class ToDoListRepository(ABC):    
+    def create_task(self, db: peewee.Database,task: Task):
         pass

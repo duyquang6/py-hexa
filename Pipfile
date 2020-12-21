@@ -15,7 +15,7 @@ python-dotenv = "*"
 
 [packages]
 fastapi = "*"
-inject = "*"
+dependency-injector = "==4.5.4"
 peewee = "*"
 pydantic = "*"
 uvicorn = "*"

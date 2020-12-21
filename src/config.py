@@ -1,8 +1,9 @@
-from pydantic import BaseSettings
+from src.dependency.provider import Container
 
+__CONFIG_VARS = [
+    "DATABASE_NAME"
+]
 
-class Settings(BaseSettings):
-    app_name: str = "ToDoList FastAPI"        
-    database_uri: str = 'todolist.db'
-
-settings = Settings()
+def setup_config(container: Container):    
+    for var in __CONFIG_VARS:
+        getattr(container.config, var).from_env(var)
